@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import type { CustomItem } from '@/lib/types'
 
-const { data: customItems } = await useFetch<CustomItem[]>('/api/custom_items')
+const { data: customItems, refresh } = await useFetch('/api/custom_items')
 </script>
 <template>
   <div class="container pt-8 max-w-6xl">
