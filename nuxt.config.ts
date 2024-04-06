@@ -10,5 +10,20 @@ export default defineNuxtConfig({
 
   typescript: {
     strict: true,
+  },
+
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: "en",
+      },
+      title: "MK8DX Custom Items Ranking",
+      meta: [
+        {
+          name: "description",
+          content: "A ranking of custom items sets in Mario Kart 8 Deluxe."
+        }
+      ]
+    }
   }
 })
