@@ -27,7 +27,6 @@
     "@nuxtjs/tailwindcss": "^6.11.4",
     "nitro-cloudflare-dev": "^0.1.4",
     "typescript": "^5.4.4",
-    "vue-tsc": "^1",
     "wrangler": "^3.48.0"
   }
 }

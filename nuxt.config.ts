@@ -9,7 +9,6 @@ export default defineNuxtConfig({
   modules: ["nitro-cloudflare-dev", '@nuxtjs/tailwindcss'],
 
   typescript: {
-    typeCheck: true,
     strict: true,
   }
 })
