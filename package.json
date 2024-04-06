@@ -12,6 +12,7 @@
     "build-cf-types": "wrangler types"
   },
   "dependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
     "@vueuse/core": "^10.9.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
