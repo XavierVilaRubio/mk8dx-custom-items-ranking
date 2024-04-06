@@ -19,6 +19,8 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240405.0",
     "nitro-cloudflare-dev": "^0.1.4",
+    "typescript": "^5.4.4",
+    "vue-tsc": "^1",
     "wrangler": "^3.48.0"
   }
 }
