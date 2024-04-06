@@ -29,5 +29,5 @@ CREATE TABLE IF NOT EXISTS custom_items (
   downvotes integer DEFAULT 0,
   votes as (upvotes - downvotes) STORED
 );
-INSERT INTO custom_items (title, items, upvotes, downvotes) VALUES ('Shell party 🐌', 'green_shell, triple_green_shells, red_shell, triple_red_shell, spiny_shell', 3, 1);
-INSERT INTO custom_items (title, items, upvotes) VALUES ('McQueen 🚗⚡', 'mushroom, triple_mushroom, golden_mushroom, lightning_bolt, star, bullet_bill', 1);
+INSERT INTO custom_items (title, items, upvotes, downvotes) VALUES ('Shell party 🐌', 'green_shell,triple_green_shells,red_shell,triple_red_shells,spiny_shell', 3, 1);
+INSERT INTO custom_items (title, items, upvotes) VALUES ('McQueen 🚗⚡', 'mushroom,triple_mushroom,golden_mushroom,lightning_bolt,star,bullet_bill', 1);
