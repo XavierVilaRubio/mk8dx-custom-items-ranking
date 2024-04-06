@@ -15,6 +15,7 @@ defineProps<{ customItem: CustomItem }>()
         <Card v-for="item in customItem.items.split(',')" class="p-2">
           <img
             :src="items.find((i) => i.name == item)?.img"
+            :alt="`${item} image`"
             class="aspect-square object-contain"
             width="40"
           />
