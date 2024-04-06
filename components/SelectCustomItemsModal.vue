@@ -38,6 +38,7 @@ const emit = defineEmits<{
 async function saveSelectedItems() {
   console.log(title.value)
   console.log(selectedItems.value)
+  if (!title.value || selectedItems.value.length === 0) return
   try {
     const response = await $fetch('/api/custom_items', {
       method: 'POST',
@@ -51,14 +52,17 @@ async function saveSelectedItems() {
       selectedItems.value = []
       console.log(response)
       emit('customItemsAdded')
+      isDialogOpen.value = false
     }
   } catch (error) {
     console.error(error)
   }
 }
+
+const isDialogOpen = ref(false)
 </script>
 <template>
-  <Dialog>
+  <Dialog :open="isDialogOpen" @update:open="(v) => (isDialogOpen = v)">
     <DialogTrigger as-child>
       <slot />
     </DialogTrigger>
@@ -109,10 +113,7 @@ async function saveSelectedItems() {
       </div>
 
       <DialogFooter>
-        <DialogClose as-child>
-          <Button variant="outline" @click="saveSelectedItems">Save</Button>
-        </DialogClose>
-        <!-- Save changes -->
+        <Button variant="outline" @click="saveSelectedItems">Save</Button>
       </DialogFooter>
     </DialogContent>
   </Dialog>
