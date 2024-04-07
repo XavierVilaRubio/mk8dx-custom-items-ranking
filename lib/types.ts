@@ -3,4 +3,6 @@ export type CustomItem = {
   title: string,
   items: string,
   votes: number,
+  upvoted?: boolean,
+  downvoted?: boolean
 }
