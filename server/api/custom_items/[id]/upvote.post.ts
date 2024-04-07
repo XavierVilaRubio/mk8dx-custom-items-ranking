@@ -6,19 +6,27 @@ export default defineEventHandler(async (event) => {
 
   const hashedAddress = await hashAddress(event.context.clientAddress!)
 
-  const info = await DB.prepare(
-    'INSERT INTO votes (custom_items_id, hashed_ip) VALUES (?1, ?2)'
-  )
-    .bind(custom_items_id, hashedAddress)
-    .run()
-
-  if (info.success) {
-    await DB.prepare(
-      'UPDATE custom_items SET upvotes = upvotes + 1 WHERE id = ?1'
+  try {
+    const info = await DB.prepare(
+      'INSERT INTO votes (custom_items_id, hashed_ip) VALUES (?1, ?2)'
     )
-      .bind(custom_items_id)
+      .bind(custom_items_id, hashedAddress)
       .run()
+
+    if (info.success) {
+      await DB.prepare(
+        'UPDATE custom_items SET upvotes = upvotes + 1 WHERE id = ?1'
+      )
+        .bind(custom_items_id)
+        .run()
+    }
+
+    return info
+  } catch (e: any) {
+    return {
+      success: false,
+      error: e.message
+    }
   }
 
-  return info
 })

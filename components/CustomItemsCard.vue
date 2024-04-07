@@ -11,24 +11,19 @@ const emit = defineEmits<{
 }>()
 
 async function upvote() {
-  try {
-    await $fetch(`/api/custom_items/${props.customItem.id}/upvote`, {
-      method: 'POST',
-    })
-    emit('voted')
-  } catch (error) {
-    console.error(error)
-  }
+  const res = await $fetch(`/api/custom_items/${props.customItem.id}/upvote`, {
+    method: 'POST',
+  })
+  if (res.success) emit('voted')
 }
 async function downvote() {
-  try {
-    await $fetch(`/api/custom_items/${props.customItem.id}/downvote`, {
+  const res = await $fetch(
+    `/api/custom_items/${props.customItem.id}/downvote`,
+    {
       method: 'POST',
-    })
-    emit('voted')
-  } catch (error) {
-    console.error(error)
-  }
+    }
+  )
+  if (res.success) emit('voted')
 }
 </script>
 <template>
