@@ -16,7 +16,11 @@ const { data: customItems, refresh } = await useFetch('/api/custom_items')
       </SelectCustomItemsModal>
     </div>
     <div class="grid gap-4 mb-8">
-      <CustomItemsCard v-for="customItem in customItems" :custom-item />
+      <CustomItemsCard
+        v-for="customItem in customItems"
+        :custom-item
+        @voted="refresh"
+      />
     </div>
   </div>
 </template>
