@@ -4,7 +4,7 @@ A simple app for ranking custom items sets on MarioKart 8 Deluxe.
 
 - Initialized and managed: [Create-Cloudflare CLI (C3)](https://developers.cloudflare.com/pages/get-started/c3/)
 - Framework: [Nuxt](https://github.com/nuxt/nuxt)
-- UI: [Shadcn-vue](https://github.com/radix-vue/shadcn-vue)
+- UI: [shadcn-vue](https://github.com/radix-vue/shadcn-vue)
 - DB: [Cloudflare D1](https://developers.cloudflare.com/d1/)
 - Deployed on: [Cloudflare Pages](https://pages.cloudflare.com/)
 - Runtime: [Bun](https://github.com/oven-sh/bun)
