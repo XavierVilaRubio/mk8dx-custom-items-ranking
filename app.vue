@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { Button } from '@/components/ui/button'
 import { Plus } from 'lucide-vue-next'
+import { useAutoAnimate } from '@formkit/auto-animate/vue'
 
 const { data: customItems, refresh } = await useFetch('/api/custom_items')
+
+const [parent] = useAutoAnimate()
 </script>
 <template>
   <div class="container pt-8 max-w-6xl @container">
@@ -15,7 +18,7 @@ const { data: customItems, refresh } = await useFetch('/api/custom_items')
         >
       </SelectCustomItemsModal>
     </div>
-    <div class="grid gap-4 mb-8">
+    <div class="grid gap-4 mb-8" ref="parent">
       <CustomItemsCard
         v-for="customItem in customItems"
         :custom-item
