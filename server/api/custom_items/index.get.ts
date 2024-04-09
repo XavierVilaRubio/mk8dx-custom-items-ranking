@@ -19,6 +19,7 @@ export default defineEventHandler(async ({ context }) => {
       END AS downvoted
     FROM custom_items
     LEFT JOIN votes ON custom_items.id = votes.custom_items_id AND votes.hashed_ip = ?1
+    ORDER BY custom_items.votes DESC
   `
   )
     .bind(hashedAddress)
